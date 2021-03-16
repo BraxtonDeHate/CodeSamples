@@ -33,9 +33,9 @@ std::vector<Point>::const_iterator divide(
 //  If function is called with 0 or 1 points, it returns float max.
 float closestPair ( std::vector< Point > const& points )
 {
-	int size = points.size();
+  int size = points.size();
 
-	if (size <= 1)
+  if (size <= 1)
     return std::numeric_limits<float>::max();
 
   std::vector<Point> newPoints(points);
@@ -53,7 +53,7 @@ float closestPair ( std::vector< Point > const& points )
   });
 
   // Call recursive divide and conquer closest pair solver
-	return closestPairDAC( newPoints.begin(), newPoints.end() );
+  return closestPairDAC( newPoints.begin(), newPoints.end() );
 }
 
 // Returns an iterator to the item following an appropriate divide in.
@@ -117,9 +117,9 @@ float distance(Point const& p1, Point const& p2)
 float closestPairDAC (std::vector< Point >::const_iterator begin,
   std::vector<Point>::const_iterator end)
 {
-	int size = end - begin;
+  int size = end - begin;
 
-	if (size <= 1) return std::numeric_limits<float>::max();
+  if (size <= 1) return std::numeric_limits<float>::max();
 
   bool onY = true;
   auto division = divide(begin, end, true);
@@ -160,6 +160,6 @@ float closestPairDAC (std::vector< Point >::const_iterator begin,
     }
   }
 
-	return minDist;
+  return minDist;
 }
 
